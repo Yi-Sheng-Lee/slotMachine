@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="back">
+            <div class="see">
+                <ul class="flip">
+                    <li class="box b1">1</li>
+                    <li class="box b2">2</li>
+                    <li class="box b3">3</li>
+                    <li class="box b4">4</li>
+                    <li class="box b5">5</li>
+                    <li class="box b6">6</li>
+                </ul>
+
+                <ul class="flip">
+                    <li class="box b1">1</li>
+                    <li class="box b2">2</li>
+                    <li class="box b3">3</li>
+                    <li class="box b4">4</li>
+                    <li class="box b5">5</li>
+                    <li class="box b6">6</li>
+                </ul>
+
+                <ul class="flip">
+                    <li class="box b1">1</li>
+                    <li class="box b2">2</li>
+                    <li class="box b3">3</li>
+                    <li class="box b4">4</li>
+                    <li class="box b5">5</li>
+                    <li class="box b6">6</li>
+                </ul>
+            </div>
+            <div class="bar">
+                <div class="holdbar"></div>
+                <div class="hold"></div>
+            </div>
+        </div>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: sans-serif;
+
+        }
+
+        body {
+            background-size: 4px 4px;
+            background-image:
+                linear-gradient(-45deg,
+                rgba(30, 30, 30, .2) 0%,
+                rgba(30, 30, 30, .2) 10%,
+                transparent 10%,
+                transparent 40%,
+                rgba(30, 30, 30, .2) 40%,
+                rgba(30, 30, 30, .2) 60%,
+                transparent 60%,
+                transparent 90%,
+                rgba(30, 30, 30, .2) 90%,
+                rgba(30, 30, 30, .2) 100%);
+        }
+
+        @keyframes turn {
+            0% {
+                transform: translateZ(-174px) rotateX(0deg);
+            }
+
+            100% {
+                transform: translateZ(-174px) rotateX(360deg);
+            }
+        }
+
+        @keyframes down {
+            0% {
+                transform: translateY(0px) scale(1);
+            }
+            50% {
+                transform: translateY(250px) scale(1.5);
+            }
+            100% {
+                transform: translateY(0px) scale(1);
+            }
+        }
+        @keyframes down2{
+            0% {
+                height: 200px;
+            }
+            50% {
+                height: 20px;
+            }
+            100% {
+                height: 200px;
+            }
+        }
+        .down{
+            animation: down 0.5s;
+        }
+        .down2{
+            animation: down2 0.5s;
+        }
+        .back {
+            margin: 200px auto;
+            width: 800px;
+            height: 250px;
+            /* background-color: #fa0; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
+            perspective: 400px;
+        }
+
+        .bar {
+            position: absolute;
+            height: 400px;
+            width: 40px;
+            background-color: #666;
+            right: -80px;
+            cursor: pointer;
+        }
+
+        .holdbar {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 200px;
+            background-color: #ccc;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border-radius: 10px;
+            /* animation: down2 1s; */
+
+
+        }
+
+        .hold {
+            width: 80px;
+            height: 80px;
+            background-color: #faa;
+            border-radius: 50%;
+            position: absolute;
+            left: -50%;
+            top: -10%;
+            box-shadow: 0 10px 10px 0 #333;
+            cursor: pointer;
+
+        }
+
+        /* .bar:hover .hold {
+            transform: translateY(250px) scale(1.5);
+            transition: 1s;
+        }
+
+        .bar:hover::before {
+            height: 20px;
+            transition: 1s;
+        } */
+
+        .hold::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5%;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            border-radius: 60% 60% 50% 50%;
+            width: 40%;
+            height: 30%;
+            background-image: linear-gradient(#fff 10%, transparent);
+            /* background-color: gradient(); */
+        }
+
+        .see {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 640px;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: #666;
+        }
+
+        .flip {
+            /* background-color: #fff; */
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-174px) rotateX(0deg);
+            margin: 0 1px;
+            transition: .2s;
+            /* animation: turn 2s linear infinite; */
+        }
+
+        .a0 {
+            transform: translateZ(-174px) rotateX(360deg)
+        }
+
+        .a1 {
+            transform: translateZ(-174px) rotateX(60deg)
+        }
+
+        .a2 {
+            transform: translateZ(-174px) rotateX(120deg)
+        }
+
+        .a3 {
+            transform: translateZ(-174px) rotateX(180deg)
+        }
+
+        .a4 {
+            transform: translateZ(-174px) rotateX(240deg)
+        }
+
+        .a5 {
+            transform: translateZ(-174px) rotateX(300deg)
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            background-color: #eee;
+            border: 1px solid #000;
+            font-size: 60px;
+            color: #00F;
+            text-align: center;
+            padding: 70px 0;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .b1 {
+            transform: translateZ(172px);
+            background-color: #eee;
+        }
+
+        .b2 {
+            transform-origin: top;
+            transform: translateZ(172px) translateY(200px) rotateX(-60deg);
+            background-color: #ccc;
+        }
+
+        .b3 {
+            transform-origin: top;
+            transform: rotateY(180deg) translateZ(172px) translateY(200px) rotateX(-60deg) rotateZ(180deg) translateY(-200px);
+            
+        }
+
+        .b4 {
+            transform: rotateY(180deg) translateZ(172px) rotateZ(180deg);
+        }
+
+        .b5 {
+            transform-origin: bottom;
+            transform: rotateY(180deg) translateZ(172px) translateY(-200px) rotateX(60deg) rotateZ(180deg) translateY(200px);
+        }
+
+        .b6 {
+            transform-origin: bottom;
+            transform: translateZ(172px) translateY(-200px) rotateX(60deg);
+            background-color: #ccc;
+        }
+        </style>
+        <script>
+            var i = 1;
+        function start() {
+            setTimeout(spin, 200);
+            
+            var b = 1;
+            var num = [];
+            var total = 0;
+            for (var j = 0; j < 3; j++) {
+                var rand = Math.floor(Math.random() * 11) + 5;
+                total += rand;
+                num[j] = total + i;
+            }
+            function spin() {
+                var x = (i + 1) % 6;
+                var z = i % 6;
+                var c = (i - 1) % 6;
+                var flip = document.getElementsByClassName('flip');
+                var box0 = document.getElementsByClassName(`b${c + 1}`);
+                var box1 = document.getElementsByClassName(`b${x + 1}`);
+                var box2 = document.getElementsByClassName(`b${z + 1}`);
+                console.log(x, z, i,num);
+                if (i < num[0]) {
+                    for (var j = 0; j < 3; j++) {
+                        
+                        flip[j].style.transform = `translateZ(-174px) rotateX(${i * 60}deg)`;
+                        box1[j].style.backgroundColor = "#ccc";
+                        if (i > 0) {
+                            box2[j].style.backgroundColor = "#eee";
+                            box0[j].style.backgroundColor = "#ccc";
+                        }                        
+                    }
+                    timerId = setTimeout(spin, 200);
+                } else if (i < num[1]) {
+                    for (var j = 1; j < 3; j++) {
+                        clearTimeout(timerId);
+                        flip[j].style.transform = `translateZ(-174px) rotateX(${i * 60}deg)`;
+                        box1[j].style.backgroundColor = "#ccc";
+                        if (i > 0) {
+                            box2[j].style.backgroundColor = "#eee";
+                            box0[j].style.backgroundColor = "#ccc";
+                        }
+                    }timerId = setTimeout(spin, 200);
+                } else if (i < num[2]) {
+                    for (var j = 2; j < 3; j++) {
+                        clearTimeout(timerId);
+                        flip[j].style.transform = `translateZ(-174px) rotateX(${i * 60}deg)`;
+                        box1[j].style.backgroundColor = "#ccc";
+                        if (i > 0) {
+                            box2[j].style.backgroundColor = "#eee";
+                            box0[j].style.backgroundColor = "#ccc";
+                        }
+                        
+                        
+                    }timerId = setTimeout(spin, 200);
+                } else {
+                }
+                i++;
+            }
+        }
+        function down() {
+            var holdbar = document.getElementsByClassName('holdbar')[0];
+            var hold = document.getElementsByClassName('hold')[0];
+            
+            hold.style.animation = "down 0.5s";
+            holdbar.style.animation = "down2 0.5s";
+            setTimeout(remove,1000);
+            function remove() {
+                hold.style.animation = "";
+                holdbar.style.animation = "";
+            }
+            console.log(holdbar);
+        }
+        function init() {
+            var bar = document.getElementsByClassName('bar')[0];
+            bar.addEventListener("click", start, false);
+            bar.addEventListener("click", down, false);
+            console.log(bar);
+        }
+        window.addEventListener("load", init, false);
+        </script>
+    </body>
+</html>
