@@ -3,356 +3,604 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="crossorigin="anonymous"></script>
         <title>Document</title>
     </head>
     <body>
-        <div class="back">
-            <div class="see">
-                <ul class="flip">
-                    <li class="box b1">1</li>
-                    <li class="box b2">2</li>
-                    <li class="box b3">3</li>
-                    <li class="box b4">4</li>
-                    <li class="box b5">5</li>
-                    <li class="box b6">6</li>
-                </ul>
-
-                <ul class="flip">
-                    <li class="box b1">1</li>
-                    <li class="box b2">2</li>
-                    <li class="box b3">3</li>
-                    <li class="box b4">4</li>
-                    <li class="box b5">5</li>
-                    <li class="box b6">6</li>
-                </ul>
-
-                <ul class="flip">
-                    <li class="box b1">1</li>
-                    <li class="box b2">2</li>
-                    <li class="box b3">3</li>
-                    <li class="box b4">4</li>
-                    <li class="box b5">5</li>
-                    <li class="box b6">6</li>
-                </ul>
+        <div class="container">
+            <div class="lights">
+                <div class="bg_box">
+                    <img class="bk" src="./img/moto_logo.jpg" style="width: 727px; height: 115px;"> 
+                </div>
+                 <!-- Default lights-->
+                 <div class="light_box">
+                    <img alt="lights" class="white_lights lightPos" src="./img/white_lights.png"> 
+                 </div>
+                <!-- Win lights-->
             </div>
-            <div class="bar">
-                <div class="holdbar"></div>
-                <div class="hold"></div>
+            <div class="numbe_window">
+                <div class="window1">
+                    <div class="window2">
+                        <div id="bigholder">
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="0">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="1">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="2">
+                                    
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="3">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="4">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="5">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="6">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="7">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="8">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <div class="holder">
+                                <div class="num digitHolder digitTransform" id="9">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- 拉霸 -->
+            <div id="shoulder">
+                <div id="arm"></div>
+            </div>
+            <div class="footer">
+                
+            </div>
+            <br>
+            <p id="winner"></p>
+
         </div>
-        <style>
-            * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-family: sans-serif;
-
-        }
-
-        body {
-            background-size: 4px 4px;
-            background-image:
-                linear-gradient(-45deg,
-                rgba(30, 30, 30, .2) 0%,
-                rgba(30, 30, 30, .2) 10%,
-                transparent 10%,
-                transparent 40%,
-                rgba(30, 30, 30, .2) 40%,
-                rgba(30, 30, 30, .2) 60%,
-                transparent 60%,
-                transparent 90%,
-                rgba(30, 30, 30, .2) 90%,
-                rgba(30, 30, 30, .2) 100%);
-        }
-
-        @keyframes turn {
-            0% {
-                transform: translateZ(-174px) rotateX(0deg);
-            }
-
-            100% {
-                transform: translateZ(-174px) rotateX(360deg);
-            }
-        }
-
-        @keyframes down {
-            0% {
-                transform: translateY(0px) scale(1);
-            }
-            50% {
-                transform: translateY(250px) scale(1.5);
-            }
-            100% {
-                transform: translateY(0px) scale(1);
-            }
-        }
-        @keyframes down2{
-            0% {
-                height: 200px;
-            }
-            50% {
-                height: 20px;
-            }
-            100% {
-                height: 200px;
-            }
-        }
-        .down{
-            animation: down 0.5s;
-        }
-        .down2{
-            animation: down2 0.5s;
-        }
-        .back {
-            margin: 200px auto;
-            width: 800px;
-            height: 250px;
-            /* background-color: #fa0; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            box-sizing: border-box;
-            perspective: 400px;
-        }
-
-        .bar {
-            position: absolute;
-            height: 400px;
-            width: 40px;
-            background-color: #666;
-            right: -80px;
-            cursor: pointer;
-        }
-
-        .holdbar {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 200px;
-            background-color: #ccc;
-            position: absolute;
-            bottom: 50%;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            border-radius: 10px;
-            /* animation: down2 1s; */
-
-
-        }
-
-        .hold {
-            width: 80px;
-            height: 80px;
-            background-color: #faa;
-            border-radius: 50%;
-            position: absolute;
-            left: -50%;
-            top: -10%;
-            box-shadow: 0 10px 10px 0 #333;
-            cursor: pointer;
-
-        }
-
-        /* .bar:hover .hold {
-            transform: translateY(250px) scale(1.5);
-            transition: 1s;
-        }
-
-        .bar:hover::before {
-            height: 20px;
-            transition: 1s;
-        } */
-
-        .hold::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 5%;
-            right: 0;
-            left: 0;
-            margin: 0 auto;
-            border-radius: 60% 60% 50% 50%;
-            width: 40%;
-            height: 30%;
-            background-image: linear-gradient(#fff 10%, transparent);
-            /* background-color: gradient(); */
-        }
-
-        .see {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 640px;
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-            background-color: #666;
-        }
-
-        .flip {
-            /* background-color: #fff; */
-            width: 200px;
-            height: 200px;
-            position: relative;
-            transform-style: preserve-3d;
-            transform: translateZ(-174px) rotateX(0deg);
-            margin: 0 1px;
-            transition: .2s;
-            /* animation: turn 2s linear infinite; */
-        }
-
-        .a0 {
-            transform: translateZ(-174px) rotateX(360deg)
-        }
-
-        .a1 {
-            transform: translateZ(-174px) rotateX(60deg)
-        }
-
-        .a2 {
-            transform: translateZ(-174px) rotateX(120deg)
-        }
-
-        .a3 {
-            transform: translateZ(-174px) rotateX(180deg)
-        }
-
-        .a4 {
-            transform: translateZ(-174px) rotateX(240deg)
-        }
-
-        .a5 {
-            transform: translateZ(-174px) rotateX(300deg)
-        }
-
-        .box {
-            width: 200px;
-            height: 200px;
-            box-sizing: border-box;
-            background-color: #eee;
-            border: 1px solid #000;
-            font-size: 60px;
-            color: #00F;
-            text-align: center;
-            padding: 70px 0;
-            position: absolute;
-            backface-visibility: hidden;
-        }
-
-        .b1 {
-            transform: translateZ(172px);
-            background-color: #eee;
-        }
-
-        .b2 {
-            transform-origin: top;
-            transform: translateZ(172px) translateY(200px) rotateX(-60deg);
-            background-color: #ccc;
-        }
-
-        .b3 {
-            transform-origin: top;
-            transform: rotateY(180deg) translateZ(172px) translateY(200px) rotateX(-60deg) rotateZ(180deg) translateY(-200px);
-            
-        }
-
-        .b4 {
-            transform: rotateY(180deg) translateZ(172px) rotateZ(180deg);
-        }
-
-        .b5 {
-            transform-origin: bottom;
-            transform: rotateY(180deg) translateZ(172px) translateY(-200px) rotateX(60deg) rotateZ(180deg) translateY(200px);
-        }
-
-        .b6 {
-            transform-origin: bottom;
-            transform: translateZ(172px) translateY(-200px) rotateX(60deg);
-            background-color: #ccc;
-        }
-        </style>
-        <script>
-            var i = 1;
-        function start() {
-            setTimeout(spin, 200);
-            
-            var b = 1;
-            var num = [];
-            var total = 0;
-            for (var j = 0; j < 3; j++) {
-                var rand = Math.floor(Math.random() * 11) + 5;
-                total += rand;
-                num[j] = total + i;
-            }
-            function spin() {
-                var x = (i + 1) % 6;
-                var z = i % 6;
-                var c = (i - 1) % 6;
-                var flip = document.getElementsByClassName('flip');
-                var box0 = document.getElementsByClassName(`b${c + 1}`);
-                var box1 = document.getElementsByClassName(`b${x + 1}`);
-                var box2 = document.getElementsByClassName(`b${z + 1}`);
-                console.log(x, z, i,num);
-                if (i < num[0]) {
-                    for (var j = 0; j < 3; j++) {
-                        
-                        flip[j].style.transform = `translateZ(-174px) rotateX(${i * 60}deg)`;
-                        box1[j].style.backgroundColor = "#ccc";
-                        if (i > 0) {
-                            box2[j].style.backgroundColor = "#eee";
-                            box0[j].style.backgroundColor = "#ccc";
-                        }                        
-                    }
-                    timerId = setTimeout(spin, 200);
-                } else if (i < num[1]) {
-                    for (var j = 1; j < 3; j++) {
-                        clearTimeout(timerId);
-                        flip[j].style.transform = `translateZ(-174px) rotateX(${i * 60}deg)`;
-                        box1[j].style.backgroundColor = "#ccc";
-                        if (i > 0) {
-                            box2[j].style.backgroundColor = "#eee";
-                            box0[j].style.backgroundColor = "#ccc";
-                        }
-                    }timerId = setTimeout(spin, 200);
-                } else if (i < num[2]) {
-                    for (var j = 2; j < 3; j++) {
-                        clearTimeout(timerId);
-                        flip[j].style.transform = `translateZ(-174px) rotateX(${i * 60}deg)`;
-                        box1[j].style.backgroundColor = "#ccc";
-                        if (i > 0) {
-                            box2[j].style.backgroundColor = "#eee";
-                            box0[j].style.backgroundColor = "#ccc";
-                        }
-                        
-                        
-                    }timerId = setTimeout(spin, 200);
-                } else {
-                }
-                i++;
-            }
-        }
-        function down() {
-            var holdbar = document.getElementsByClassName('holdbar')[0];
-            var hold = document.getElementsByClassName('hold')[0];
-            
-            hold.style.animation = "down 0.5s";
-            holdbar.style.animation = "down2 0.5s";
-            setTimeout(remove,1000);
-            function remove() {
-                hold.style.animation = "";
-                holdbar.style.animation = "";
-            }
-            console.log(holdbar);
-        }
-        function init() {
-            var bar = document.getElementsByClassName('bar')[0];
-            bar.addEventListener("click", start, false);
-            bar.addEventListener("click", down, false);
-            console.log(bar);
-        }
-        window.addEventListener("load", init, false);
-        </script>
     </body>
 </html>
+<style>
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
+*{
+  box-sizing: border-box;
+}
+body,html{
+  /* background:#000000; */
+}
+.container {
+    width:100%;
+	max-width:804px;
+	/* max-height:700px; */
+	position: relative;
+    /* top: 10%; */
+    margin:0 auto;
+}
+.light_box {
+    /* background-color: #5a4812; */
+    background-color: black;
+}
+.light {
+    background: black;
+}
+.numbe_window {
+    width: 100%;
+    height: 220px;
+    /* margin: auto; */
+    background-color: black;
+}
+.window1 {
+    width: 95%;
+    padding-top: 20px;
+    height: 200px;
+    margin: auto;
+    background-color: gray;
+}
+.window2 {
+    width: 95%;
+    height: 160px;
+    padding: 20px;
+    margin: auto;
+    background-color: #5a4812;
+}
+.red_light {
+	width:100%;
+	text-align:center;
+	vertical-align:bottom;
+	font-size: 0;
+}
+.bg_box {
+    position: absolute;
+    top: 33px;
+    left: 42px;
+}
+.bk {
+	position: absolute;
+	margin:0;
+	width:100%;
+}
+@keyframes blink {
+    to {
+	    visibility:hidden;
+    }
+}
+
+@-webkit-keyframes blink {
+    to {
+	    visibility:hidden;
+    }
+}
+
+@-moz-keyframes blink {
+    to {
+	    visibility:hidden;
+    }
+}
+
+@-o-keyframes blink {
+    to {
+        visibility:hidden;
+    }
+}
+.white_lights {
+	animation:blink .8s steps(5,start) infinite;
+	-webkit-animation:blink .8s steps(5,start) infinite;
+	-moz-animation:blink .8s steps(5,start) infinite;
+	-o-animation:blink .8s steps(5,start) infinite;
+	display:block;
+	z-index:5;
+	position:relative;
+}
+.lightPos {
+    width: 100%;
+    height: 180px;
+}
+
+.footer {
+    width: 85%;
+    height: 200px;
+    margin: auto;
+    background: black;
+}
+/* ---------- 拉霸 -------------------- */
+#shoulder {
+  position: absolute;
+  top: 250px;
+  right: -80px;
+  width: 80px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #333;
+  background-image: -webkit-linear-gradient(#666 0%, #333 60%, #666 100%);
+  background-image: -moz-linear-gradient(#666 0%, #333 60%, #666 100%);
+  background-image: -ms-linear-gradient(#666 0%, #333 60%, #666 100%);
+  background-image: -o-linear-gradient(#666 0%, #333 60%, #666 100%);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.2);
+}
+#arm {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  width: 60px;
+  height: 80px;
+  border-radius: 10% / 50%;
+  background-color: #666;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 15%, rgba(255, 255, 255, 0) 50%, transparent 85%, rgba(0, 0, 0, 0.3)), -webkit-linear-gradient(top, #333 0%, #666 10%, #999 30%, rgba(255, 255, 255, 0.8) 60%, #999 70%, #666 90%, #333 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 15%, rgba(255, 255, 255, 0) 50%, transparent 85%, rgba(0, 0, 0, 0.3)), -moz-linear-gradient(top, #333 0%, #666 10%, #999 30%, rgba(255, 255, 255, 0.8) 60%, #999 70%, #666 90%, #333 100%);
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 15%, rgba(255, 255, 255, 0) 50%, transparent 85%, rgba(0, 0, 0, 0.3)), -ms-linear-gradient(top, #333 0%, #666 10%, #999 30%, rgba(255, 255, 255, 0.8) 60%, #999 70%, #666 90%, #333 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 15%, rgba(255, 255, 255, 0) 50%, transparent 85%, rgba(0, 0, 0, 0.3)), -o-linear-gradient(top, #333 0%, #666 10%, #999 30%, rgba(255, 255, 255, 0.8) 60%, #999 70%, #666 90%, #333 100%);
+}
+#arm:before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 16px;
+  width: 16px;
+  height: 70px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 0px #333;
+  background-color: #999;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  background-image: -webkit-linear-gradient(left, #666 0%, rgba(255, 255, 255, 0.7) 50%, #666 100%);
+  background-image: -moz-linear-gradient(left, #666 0%, rgba(255, 255, 255, 0.7) 50%, #666 100%);
+  background-image: -ms-linear-gradient(left, #666 0%, rgba(255, 255, 255, 0.7) 50%, #666 100%);
+  background-image: -o-linear-gradient(left, #666 0%, rgba(255, 255, 255, 0.7) 50%, #666 100%);
+  background-image: linear-gradient(to right, #666666 0%, rgba(255, 255, 255, 0.7) 50%, #666666 100%);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+#arm:after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: -4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #760209;
+  border: 2px solid #5d0207;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-radial-gradient(50% 40%, closest-corner, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: -moz-radial-gradient(50% 40%, closest-corner, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: -ms-radial-gradient(50% 40%, closest-corner, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: -o-radial-gradient(50% 40%, closest-corner, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#arm.clicked:before {
+  top: -20px;
+  left: 20px;
+  -webkit-transform: rotate3d(100, 10, 0, 180deg);
+  -moz-transform: rotate3d(100, 10, 0, 180deg);
+  transform: rotate3d(100, 10, 0, 180deg);
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+#arm.clicked:after {
+  top: 90px;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+/* ----------------------------------- */
+#bigholder{
+  background:#fff;
+  /* margin-top:1%; */
+  padding:10px;
+  font-family:open sans;
+  font-size:30px;
+  font-weight:thin;
+  text-transform:capitalize;
+  display: flex;
+  justify-content: space-evenly;
+}
+#bigholdeer{
+  border-bottom:solid 3px #000;
+  margin-top:6%;
+  padding:10px;
+  font-family:open sans;
+  font-size:20px;
+  font-weight:thin;
+  text-transform:capitalize;
+  width:300px;
+  margin:0 auto; 
+}
+.gen{
+  background:#000;
+  color:#fff;
+  padding:4px;
+  font-family:oswald;
+  font-size:20px;
+}
+.holder{
+  display:inline-block;
+  height:100px;
+  width:auto;
+  text-align:center;
+  overflow:hidden;
+  background:#fff;
+  color:#000;
+  padding:0;
+}
+.digitHolder{
+  line-height:100px;
+  margin:0 8px 0 8px;
+  font-size:100px;
+  font-family:oswald;
+  /* -webkit-transition:all 3s ease;
+  -moz-transition:all 3s ease;
+  -o-transition:all 3s ease;
+  transition:all 3s ease; */
+}
+.digitTransform {
+    transform: rotateX(0Deg);
+  -webkit-transition:margin-top 3s ease;
+  -moz-transition:margin-top 3s ease;
+  -o-transition:margin-top 3s ease;
+  transition:margin-top 3s ease;
+}
+button{
+  width:80px;
+  height:40px;
+  color:#fff;
+  background:#000;
+  border:none;
+  font-family:oswald;
+  font-size:16px;
+  margin-top:5%;
+}
+button:hover{
+
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform:scale(1.1,1.1);
+  -o-transform:scale(1.1,1.1);
+  transform:scale(1.1,1.1);
+  
+}
+</style>
+<script>
+    $(document).ready(function(){
+        var holder=[];
+        var randomm = 0
+        var isRolling = false
+        $("#winner").hide();
+        $("#arm").click(function(){
+            if (!isRolling) {
+                var arm = $(this).addClass('clicked');
+                setTimeout(function() { arm.removeClass('clicked');}, 500);
+                go();
+            }
+        });
+        function go (){
+            isRolling = true;
+            randomize();
+            sliceNum();
+            turnTheSlot();
+            reset();
+            console.log(randomm)
+
+        }
+    function randomize (){
+        var gap = 0
+        randomm = Math.floor(Math.random()*100000000);
+        gap = 8 - (randomm).toString().length
+        console.log(randomm, gap)
+        // randomm = '0972523197'
+        var num;
+        if(randomm == 0){num = "0900000000"}
+        else if(randomm < 10){num = "090000000" + randomm;}
+        else if(randomm < 100){num = "09000000" + randomm;}
+        else if(randomm < 1000){num="0900000" + randomm;}
+        else if(randomm < 10000){num="090000" + randomm;}
+        else if(randomm < 100000){num="09000" + randomm;}
+        else if(randomm < 1000000){num="0900" + randomm;}
+        else if(randomm < 10000000){num="090" + randomm;}
+        else if(randomm < 100000000){num="09" + randomm;}
+        // else{num = randomm}
+        $("#winner").text(num);
+    }
+
+    function sliceNum (){
+        var theNUM = $("#winner").text();
+        for(var i = 0; i < 10; i++){
+            var valu = theNUM.slice(i, i+1);
+            holder.push(valu);
+        }
+        console.log(holder)
+    }
+
+    function reset (){
+        holder.length = 0;
+    }
+    
+    function turnTheSlot (){
+        var location = []
+        for(var i=0; i < 10;i++){
+            var theValue = holder[i];
+            var margin= 100 * theValue + 1000*i + 6000;
+            location.push(-margin)
+            $("#"+i+"").css("margin-top", "-" + margin + "px");
+        }
+        setTimeout(function() {
+            for(var i=0; i < 10;i++){
+                $("#"+ i +"").removeClass("digitTransform")
+            }
+        }, 4000);
+        setTimeout(function() {
+            for(var i=0; i < 10;i++){
+                $("#"+ i +"").css("margin-top", location[i] + 1000*i + 6000 + "px");
+            }
+        }, 5000);
+        setTimeout(function() {
+            for(var i=0; i < 10;i++){
+                $("#"+ i +"").addClass("digitTransform");
+            }
+            isRolling = false
+        }, 6000);
+    }
+});
+</script>
