@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 html, body{
-  
   background-color: antiquewhite !important;
 }
 .table {
@@ -20,13 +19,10 @@ table tr, table td {
 .container {
     width:100%;
 	  max-width:804px !important;
-	  /* max-height:700px; */
 	  position: relative;
-    /* top: 10%; */
     margin:0 auto !important;
 }
 .light_box {
-    /* background-color: #5a4812; */
     background-color: black;
 }
 .light {

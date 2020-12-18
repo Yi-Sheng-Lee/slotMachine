@@ -114,41 +114,33 @@
                                             <td>${name}</td>
                                             <td>${email[0]}@XXXXXXXX</td>
                                             <td>${e.mobile}</td>
-                                        </tr>`
-                            // str += `<div style="width: 100%; padding: 5px;">
-                            //             <div style="display: flex; justify-content: between; aligh-items: center;">
-                            //                 <div style="width: 25%;">${e.name}</div>
-                            //                 <div style="width: 50%;">${e.email}</div>
-                            //                 <div style="width: 25%;">${e.mobile}</div>
-                            //             </div>
-                            //         </div>`
+                                        </tr>`;
                         });
                         str += `</tbody></table>`
                         if (res.data.data.length != 0) {
-                            $("#winnerList").html(str)
+                            $("#winnerList").html(str);
                         } else {
                             var strs = `<div class="d-flex justify-content-center align-items-center">
                                             無資料
-                                        </div>`
-                            $("#winnerList").html(strs)
+                                        </div>`;
+                            $("#winnerList").html(strs);
                         }
-                        // $("#exampleModalTitle").html(window.localStorage.getItem("win_prize_title"))
                         $("#exampleModal").modal('show');
                     })
                     .catch(function (err) {
-                        console.log(err)
+                        console.log(err);
                     })
                 // })
-            }
+            };
 
             function createTable (data) {
                 var str = `<thead>
                                 <tr><th colspan=4 class="text-center" style="font-size: 30px;">抽獎獎品列表</th></tr>
-                            <thead>`
+                            <thead>`;
                 data.forEach(e => {
                     str += `<tbody>
                                 <tr>
-                                    <td rowspan=${(e.prize_list.length + 1)}> ${e.name} </td>`
+                                    <td rowspan=${(e.prize_list.length + 1)}> ${e.name} </td>`;
                     e.prize_list.forEach(e2 => {
                         str += `<tr>
                                     <td>
@@ -158,18 +150,19 @@
                                     <td>
                                         <button class="btn btn-success" data-pname=${e.name} data-lname=${e2.name} data-pid=${e.id} data-lid=${e2.id}>抽獎</button>
                                     </td>
-                                </tr>`
-                    })
+                                </tr>`;
+                    });
                     str += "</tr>"
                 });
-                str += "</tbody>"
-                $("#prizeTable").html(str)
+                str += "</tbody>";
+                $("#prizeTable").html(str);
                 $(".btn").on("click", function (e) {
-                    window.localStorage.setItem('prize_name', $(this).attr('data-pname'))
-                    window.localStorage.setItem('prize_id', $(this).attr('data-pid'))
-                    window.localStorage.setItem('lottery_name', $(this).attr('data-lname'))
-                    window.localStorage.setItem('lottery_id', $(this).attr('data-lid'))
-                    window.location.href = './slot/slot.html'
+                    window.localStorage.setItem('prize_name', $(this).attr('data-pname'));
+                    window.localStorage.setItem('prize_id', $(this).attr('data-pid'));
+                    window.localStorage.setItem('lottery_name', $(this).attr('data-lname'));
+                    window.localStorage.setItem('lottery_id', $(this).attr('data-lid'));
+                    window.open('./slot/slot.html', '_blank');
+                    // window.location.href = './slot/slot.html';
                 })
                 $(".winner").on("click", function (e) {
                     window.localStorage.setItem("win_prize_title", $(this).attr("data-title"));
@@ -181,7 +174,7 @@
 
             $('#prizeList').on('hidden.bs.modal', function (e) {
                 $("#winnerList").html("")
-            })
+            });
         });
     </script>
     <style>

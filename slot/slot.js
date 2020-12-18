@@ -79,24 +79,13 @@ $(document).ready(function () {
             } 
         })
         .then(function (res) {
-            var info = {}
-            var str = ""
-            var img_width = 0
-            var img_height = 0
-            console.log(res.data.data)
+            var info = {};
+            var str = "";
             res.data.data.forEach(e => {
                 if (e.id == lotteryId) {
                     info = e
-                }
-            })
-            // <table>
-            //     <tbody class="table table-borderless">
-            //         <tr>
-            //             <td>獎品資訊</td>
-            //             <td></td>
-            //         </tr>
-            //     </tbody>
-            // </table>
+                };
+            });
             str = `<div class="card border-0" style="width: 100%; margin: auto; background: antiquewhite;">
                         <img class="prize-img mt-4 p-1" src="${info.image}" alt="${info.name}">
                         <div class="card-body">
@@ -105,21 +94,15 @@ $(document).ready(function () {
                                 <span style="font-size: 20px;">${info.description}</span>
                             </div>
                         </div>
-                    </div>`
-            $("#prizeInfo").html(str)
-            img_width = $(".prize-img").width()
-            img_height = $(".prize-img").height()
-            // if (img_width > img_height) {
-                $(".prize-img").css('max-width', '250px')
-                    .css('margin', 'auto')
-                    .css('border', '1px solid #f3cccc')
-                    .css('border-radius', '6px');
-            // } else {
-            //     $(".prize-img").css('max-height', '100%')
-            // }
+                    </div>`;
+            $("#prizeInfo").html(str);
+            $(".prize-img").css('max-width', '300px')
+                .css('margin', 'auto')
+                .css('border', '1px solid #f3cccc')
+                .css('border-radius', '6px');
         })
         .catch(function (err) {
-            console.log(err)
+            console.log(err);
         })
     }
 
@@ -138,12 +121,11 @@ $(document).ready(function () {
             if (res.data.status == "success") {
                 go(res.data.data[0].mobile);
             } else {
-                console.log(res.data.message)
                 alert(res.data.message);
             }
         })
         .catch(function (err) {
-            console.log(err)
+            console.log(err);
         })
     };
 
@@ -163,38 +145,31 @@ $(document).ready(function () {
                                 <th>E-mail</th>
                                 <th>電話號碼</th>
                             </tr>
-                        </thead>`
+                        </thead>`;
             res.data.data.forEach(e => {
                 var email = e.email.split('@');
                 var name = "";
-                var tmp = ""
+                var tmp = "";
                 if (e.name.includes(" ")){
                     tmp = e.name.split(" ");
                 } else {
                     tmp = e.name.split("");
                 }
-                name = tmp[0] + " X " + tmp[tmp.length - 1]
+                name = tmp[0] + " X " + tmp[tmp.length - 1];
                 str += `<tbody>
                             <tr>
                                 <td>${name}</td>
                                 <td>${email[0]}@XXXXXXXX</td>
                                 <td>${e.mobile}</td>
-                            </tr>`
-                // str += `<div style="width: 100%; padding: 5px;">
-                //             <div style="display: flex; justify-content: between; aligh-items: center;">
-                //                 <div style="width: 25%;">${e.name}</div>
-                //                 <div style="width: 50%;">${e.email}</div>
-                //                 <div style="width: 25%;">${e.mobile}</div>
-                //             </div>
-                //         </div>`
+                            </tr>`;
             });
-            str += `</tbody>`
+            str += `</tbody>`;
             if (res.data.data.length != 0) {
-                $("#winnerList").html(str)
+                $("#winnerList").html(str);
             }
         })
         .catch(function (err) {
-            console.log(err)
+            console.log(err);
         })
     }
     signin();
