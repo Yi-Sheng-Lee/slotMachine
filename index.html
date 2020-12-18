@@ -13,7 +13,8 @@
     <body>
         <div class="container">
             <div class="img_box">
-                <img class="img-fluid" src="/img/moto_logo.jpg" alt="">
+                <!-- <img class="img-fluid" src="/img/moto_logo.jpg" alt=""> -->
+                <img class="img-fluid" src="https://moto7.net/imgs/2021%E9%87%8D%E8%BB%8A%E5%B1%95logo.png" alt="">
             </div>
             <table id="prizeTable" class="table table-bordered table-hover" style="width: 100%; max-width: 1000px; margin: auto;"></table>
         </div>
@@ -151,7 +152,7 @@
                     e.prize_list.forEach(e2 => {
                         str += `<tr>
                                     <td>
-                                        <span class="winner" data-title=${e2.name} data-pid=${e.id} data-toggle="modal" data-target="#prizeList">${e2.name}</span>
+                                        <span class="winner" data-title=${e2.name} data-pid=${e.id} data-toggle="modal" data-target="#prizeList" style="cursor: pointer;">${e2.name}</span>
                                     </td>
                                     <td>${e2.qty}</td>
                                     <td>
@@ -186,6 +187,9 @@
     <style>
         table tr, table td {
             vertical-align: middle !important;
+        }
+        .winner:hover {
+            color: blue;
         }
     </style>
 </html>
