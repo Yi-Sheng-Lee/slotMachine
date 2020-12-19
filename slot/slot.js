@@ -96,7 +96,7 @@ $(document).ready(function () {
                         </div>
                     </div>`;
             $("#prizeInfo").html(str);
-            $(".prize-img").css('max-width', '300px')
+            $(".prize-img").css('max-width', '320px')
                 .css('margin', 'auto')
                 .css('border', '1px solid #f3cccc')
                 .css('border-radius', '6px');
