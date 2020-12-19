@@ -4,9 +4,12 @@
   box-sizing: border-box;
 }
 html, body{
-  background-color: antiquewhite !important;
+  min-height: 100vh;
+  /* background-color: antiquewhite !important; */
+  background: linear-gradient(#f1240d, #860b07);;
+  /* background-image: linear-gradient(bottom, #FF2E17,#FF2D16, #9F160D, #670704); */
 }
-.table {
+/* .table {
   border-collapse: collapse;
   color: #212529;
 }
@@ -15,18 +18,12 @@ html, body{
 }
 table tr, table td {
   vertical-align: middle;
-}
+} */
 .container {
     width:100%;
-	  max-width:804px !important;
+	  max-width:860px !important;
 	  position: relative;
     margin:0 auto !important;
-}
-.light_box {
-    background-color: black;
-}
-.light {
-    background: black;
 }
 .numbe_window {
     background: #ED5D1E;
@@ -42,8 +39,9 @@ table tr, table td {
     position: relative;
     /* top: 439px; */
     margin: auto;
-    width: calc(100% - 32px);
+    width: 100%;
     z-index: 2;
+    padding: 10px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,11 +55,10 @@ table tr, table td {
     box-sizing: border-box;
     box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8), inset 0 0 25px rgba(255, 255, 255, 0.2);
     height: 12px;
-    /* left: 16px; */
     margin: auto;
     position: relative;
     top: 7px;
-    width: calc(100% - 35.5px);
+    width: 100%;
 }
 
 .slot-bottom {
@@ -76,8 +73,8 @@ table tr, table td {
     /* left: 16px; */
     margin: auto;
     position: relative;
-    bottom: 6px;
-    width: calc(100% - 36px);
+    bottom: 7px;
+    width: 100%;
 }
 .red_light {
 	width:100%;
@@ -86,11 +83,9 @@ table tr, table td {
 	font-size: 0;
 }
 .bk {
-	position: absolute;
-  width: 624px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  left: 50%;
-  transform: translate(-50%, 0);
+	/* position: absolute; */
+  width: 70%;
+  margin: auto;
 }
 @keyframes blink {
     to {
@@ -138,9 +133,9 @@ table tr, table td {
 }
 /* ---------- 拉霸 -------------------- */
 #shoulder {
-  position: absolute;
-  top: 43px;
-  right: -60px;
+  /* position: absolute; */
+  /* top: 43px; */
+  /* right: -60px; */
   width: 80px;
   height: 100px;
   border-radius: 10px;

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var API = "https://ticket.motorworld.com.tw/api";
+    var prizeName = window.localStorage.getItem("prize_name");
     var prizeId = window.localStorage.getItem("prize_id");
     var lotteryId = window.localStorage.getItem("lottery_id");
     var holder=[];
@@ -14,7 +15,7 @@ $(document).ready(function () {
             getWinner();
         }
     });
-
+    // 抽獎
     function go (mobile) {
         console.log('mobile', mobile)
         isRolling = true;
@@ -50,7 +51,7 @@ $(document).ready(function () {
         }, 4000);
         holder.length = 0;
     };
-    
+    // 登入
     function signin () {
         var payload = {
             "api_id": "5f789b17a1b6a909d6de43a2",
@@ -65,13 +66,13 @@ $(document).ready(function () {
             // window.localStorage.setItem('lott_token', res.data.data.token);
             token = res.data.data.token;
             getPrizeInfo();
-            getWinnerList();
+            // getWinnerList();
         }).catch(function (error) {
             // handle error
             console.log(error);
         });
     };
-
+    // 取得 獎品資訊
     function getPrizeInfo () {
         axios.get(API + "/lottery/" + prizeId + "/prize", {
             headers: {
@@ -86,26 +87,31 @@ $(document).ready(function () {
                     info = e
                 };
             });
-            str = `<div class="card border-0" style="width: 100%; margin: auto; background: antiquewhite;">
-                        <img class="prize-img mt-4 p-1" src="${info.image}" alt="${info.name}">
-                        <div class="card-body">
-                            <div class="text-center">
-                                <span style="font-size: 30px;"><strong>${info.name}</strong></span><br/>
-                                <span style="font-size: 20px;">${info.description}</span>
-                            </div>
-                        </div>
-                    </div>`;
-            $("#prizeInfo").html(str);
-            $(".prize-img").css('max-width', '320px')
-                .css('margin', 'auto')
-                .css('border', '1px solid #f3cccc')
-                .css('border-radius', '6px');
+            console.log(info)
+            $("#prize_title").html(prizeName + "  " + info.qty + "名");
+            $("#prize_img").attr("src", info.image);
+            $("#prize_name").html(info.name);
+            $("#prize_qty").html(info.qty);
+            // str = `<div class="card border-0" style="width: 100%; margin: auto; background: antiquewhite;">
+            //             <img class="prize-img mt-4 p-1" src="${info.image}" alt="${info.name}">
+            //             <div class="card-body">
+            //                 <div class="text-center">
+            //                     <span style="font-size: 30px;"><strong>${info.name}</strong></span><br/>
+            //                     <span style="font-size: 20px;">${info.description}</span>
+            //                 </div>
+            //             </div>
+            //         </div>`;
+            // $("#prizeInfo").html(str);
+            // $(".prize-img").css('max-width', '320px')
+            //     .css('margin', 'auto')
+            //     .css('border', '1px solid #f3cccc')
+                // .css('border-radius', '6px');
         })
         .catch(function (err) {
             console.log(err);
         })
     }
-
+    // 轉出得獎者
     function getWinner () {
         var payload = {
             "qty": 1,
@@ -128,7 +134,7 @@ $(document).ready(function () {
             console.log(err);
         })
     };
-
+    // 取得 得獎者清單
     function getWinnerList () {
         axios.get(API + '/lottery/' + prizeId + '/winner', {
             headers: {
@@ -138,35 +144,50 @@ $(document).ready(function () {
             }
         })
         .then(function (res) {
-            var str = `<thead>
-                            <tr><th colspan=3 class="text-center" style="font-size: 30px;">獲獎名單</th></tr>
-                            <tr>
-                                <th>姓名</th>
-                                <th>E-mail</th>
-                                <th>電話號碼</th>
-                            </tr>
-                        </thead>`;
-            res.data.data.forEach(e => {
-                var email = e.email.split('@');
-                var name = "";
-                var tmp = "";
-                if (e.name.includes(" ")){
-                    tmp = e.name.split(" ");
-                } else {
-                    tmp = e.name.split("");
-                }
-                name = tmp[0] + " X " + tmp[tmp.length - 1];
-                str += `<tbody>
-                            <tr>
-                                <td>${name}</td>
-                                <td>${email[0]}@XXXXXXXX</td>
-                                <td>${e.mobile}</td>
-                            </tr>`;
-            });
-            str += `</tbody>`;
-            if (res.data.data.length != 0) {
-                $("#winnerList").html(str);
+            var name = "";
+            var tmp = "";
+            // var phone = "";
+            // var tmp2 = [];
+            if (res.data.data[0].name.includes(" ")){
+                tmp = res.data.data[0].name.split(" ");
+            } else {
+                tmp = res.data.data[0].name.split("");
             }
+            name = tmp[0] + " X " + tmp[tmp.length - 1];
+            $("#winner_no").html(res.data.data.length)
+            $("#winner").html("姓名&nbsp;&nbsp;&nbsp;&nbsp;" + name)
+            $("#winner_phone").html("電話末五碼&nbsp;&nbsp;&nbsp;" + res.data.data[0].mobile.slice(res.data.data[0].mobile.length - 5, res.data.data[0].mobile.length));
+            $("#winner_box").removeClass('d-none');
+            
+            // var str = `<thead>
+            //                 <tr><th colspan=3 class="text-center" style="font-size: 30px;">獲獎名單</th></tr>
+            //                 <tr>
+            //                     <th>姓名</th>
+            //                     <th>E-mail</th>
+            //                     <th>電話號碼</th>
+            //                 </tr>
+            //             </thead>`;
+            // res.data.data.forEach(e => {
+            //     var email = e.email.split('@');
+            //     var name = "";
+            //     var tmp = "";
+            //     if (e.name.includes(" ")){
+            //         tmp = e.name.split(" ");
+            //     } else {
+            //         tmp = e.name.split("");
+            //     }
+            //     name = tmp[0] + " X " + tmp[tmp.length - 1];
+            //     str += `<tbody>
+            //                 <tr>
+            //                     <td>${name}</td>
+            //                     <td>${email[0]}@XXXXXXXX</td>
+            //                     <td>${e.mobile}</td>
+            //                 </tr>`;
+            // });
+            // str += `</tbody>`;
+            // if (res.data.data.length != 0) {
+            //     $("#winnerList").html(str);
+            // }
         })
         .catch(function (err) {
             console.log(err);
