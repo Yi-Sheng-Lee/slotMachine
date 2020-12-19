@@ -38,6 +38,7 @@ $(document).ready(function () {
             }
         }, 3000);
         setTimeout(function () {
+            getWinnerList();
             for(var i=0; i < 10;i++){
                 $("#"+ i +"").css("margin-top", location[i] + 1000 * i + 6000 + "px");
             }
@@ -47,7 +48,6 @@ $(document).ready(function () {
                 $("#"+ i +"").addClass("digitTransform");
             }
             isRolling = false
-            getWinnerList();
         }, 4000);
         holder.length = 0;
     };

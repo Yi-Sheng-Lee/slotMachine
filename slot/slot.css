@@ -119,18 +119,6 @@ table tr, table td {
 	z-index:5;
 	position:relative;
 }
-.lightPos {
-    width: 100%;
-    height: 180px;
-}
-
-.footer {
-    width: 85%;
-    height: 200px;
-    margin: auto;
-    background: black;
-    display: none;
-}
 /* ---------- 拉霸 -------------------- */
 #shoulder {
   /* position: absolute; */
