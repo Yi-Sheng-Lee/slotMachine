@@ -91,7 +91,7 @@ $(document).ready(function () {
             $("#prize_title").html(prizeName + "  " + info.qty + "名");
             $("#prize_img").attr("src", info.image);
             $("#prize_name").html(info.name);
-            $("#prize_qty").html(info.qty);
+            $("#prize_qty").html("X&nbsp;1");
             // str = `<div class="card border-0" style="width: 100%; margin: auto; background: antiquewhite;">
             //             <img class="prize-img mt-4 p-1" src="${info.image}" alt="${info.name}">
             //             <div class="card-body">
