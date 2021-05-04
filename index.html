@@ -161,7 +161,7 @@
                     window.localStorage.setItem('prize_id', $(this).attr('data-pid'));
                     window.localStorage.setItem('lottery_name', $(this).attr('data-lname'));
                     window.localStorage.setItem('lottery_id', $(this).attr('data-lid'));
-                    window.open('./slot/slot.html', '_blank');
+                    window.open('./slot/slot.html?pid=' + $(this).attr('data-pid') + '&lid=' + $(this).attr('data-lid') + '&pname=' + $(this).attr('data-pname'), '_blank');
                     // window.location.href = './slot/slot.html';
                 })
                 $(".winner").on("click", function (e) {

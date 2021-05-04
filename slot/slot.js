@@ -1,8 +1,12 @@
 $(document).ready(function () {
     var API = "https://ticket.motorworld.com.tw/api";
-    var prizeName = window.localStorage.getItem("prize_name");
-    var prizeId = window.localStorage.getItem("prize_id");
-    var lotteryId = window.localStorage.getItem("lottery_id");
+    // var prizeName = window.localStorage.getItem("prize_name");
+    // var prizeId = window.localStorage.getItem("prize_id");
+    // var lotteryId = window.localStorage.getItem("lottery_id");
+    var url = new URL(window.location.href);
+    var prizeName = url.searchParams.get("pname");
+    var prizeId = url.searchParams.get("pid");
+    var lotteryId = url.searchParams.get("lid");
     var holder=[];
     var isRolling = false;
     var token = "";
