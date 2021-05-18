@@ -42,7 +42,7 @@ $(document).ready(function () {
             }
         }, 3000);
         setTimeout(function () {
-            // getWinnerList();
+            getWinnerList();
             for(var i=0; i < 10;i++){
                 $("#"+ i +"").css("margin-top", location[i] + 1000 * i + 6000 + "px");
             }
@@ -129,20 +129,6 @@ $(document).ready(function () {
         }).then(function (res) {
             if (res.data.status == "success") {
                 go(res.data.data[0].mobile);
-                setTimeout(() => {
-                    var name = "";
-                    var tmp = "";
-                    if (res.data.data[0].name.includes(" ")){
-                        tmp = res.data.data[0].name.split(" ");
-                    } else {
-                        tmp = res.data.data[0].name.split("");
-                    }
-                    name = tmp[0] + " X " + tmp[tmp.length - 1];
-                    $("#winner_no").html(res.data.data.length)
-                    $("#winner").html("姓名&nbsp;&nbsp;&nbsp;&nbsp;" + name)
-                    $("#winner_phone").html("電話末五碼&nbsp;&nbsp;&nbsp;" + res.data.data[0].mobile.slice(res.data.data[0].mobile.length - 5, res.data.data[0].mobile.length));
-                    $("#winner_box").removeClass('d-none');
-                }, 3700)
             } else {
                 alert(res.data.message);
             }
@@ -174,35 +160,35 @@ $(document).ready(function () {
             $("#winner_phone").html("電話末五碼&nbsp;&nbsp;&nbsp;" + res.data.data[0].mobile.slice(res.data.data[0].mobile.length - 5, res.data.data[0].mobile.length));
             $("#winner_box").removeClass('d-none');
             
-            // var str = `<thead>
-            //                 <tr><th colspan=3 class="text-center" style="font-size: 30px;">獲獎名單</th></tr>
-            //                 <tr>
-            //                     <th>姓名</th>
-            //                     <th>E-mail</th>
-            //                     <th>電話號碼</th>
-            //                 </tr>
-            //             </thead>`;
-            // res.data.data.forEach(e => {
-            //     var email = e.email.split('@');
-            //     var name = "";
-            //     var tmp = "";
-            //     if (e.name.includes(" ")){
-            //         tmp = e.name.split(" ");
-            //     } else {
-            //         tmp = e.name.split("");
-            //     }
-            //     name = tmp[0] + " X " + tmp[tmp.length - 1];
-            //     str += `<tbody>
-            //                 <tr>
-            //                     <td>${name}</td>
-            //                     <td>${email[0]}@XXXXXXXX</td>
-            //                     <td>${e.mobile}</td>
-            //                 </tr>`;
-            // });
-            // str += `</tbody>`;
-            // if (res.data.data.length != 0) {
-            //     $("#winnerList").html(str);
-            // }
+            var str = `<thead>
+                            <tr><th colspan=3 class="text-center" style="font-size: 30px;">獲獎名單</th></tr>
+                            <tr>
+                                <th>姓名</th>
+                                <th>E-mail</th>
+                                <th>電話號碼</th>
+                            </tr>
+                        </thead>`;
+            res.data.data.forEach(e => {
+                var email = e.email.split('@');
+                var name = "";
+                var tmp = "";
+                if (e.name.includes(" ")){
+                    tmp = e.name.split(" ");
+                } else {
+                    tmp = e.name.split("");
+                }
+                name = tmp[0] + " X " + tmp[tmp.length - 1];
+                str += `<tbody>
+                            <tr>
+                                <td>${name}</td>
+                                <td>${email[0]}@XXXXXXXX</td>
+                                <td>${e.mobile}</td>
+                            </tr>`;
+            });
+            str += `</tbody>`;
+            if (res.data.data.length != 0) {
+                $("#winnerList").html(str);
+            }
         })
         .catch(function (err) {
             console.log(err);
