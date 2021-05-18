@@ -42,7 +42,7 @@ $(document).ready(function () {
             }
         }, 3000);
         setTimeout(function () {
-            getWinnerList();
+            // getWinnerList();
             for(var i=0; i < 10;i++){
                 $("#"+ i +"").css("margin-top", location[i] + 1000 * i + 6000 + "px");
             }
@@ -70,7 +70,6 @@ $(document).ready(function () {
             // window.localStorage.setItem('lott_token', res.data.data.token);
             token = res.data.data.token;
             getPrizeInfo();
-            // getWinnerList();
         }).catch(function (error) {
             // handle error
             console.log(error);
@@ -130,6 +129,20 @@ $(document).ready(function () {
         }).then(function (res) {
             if (res.data.status == "success") {
                 go(res.data.data[0].mobile);
+                setTimeout(() => {
+                    var name = "";
+                    var tmp = "";
+                    if (res.data.data[0].name.includes(" ")){
+                        tmp = res.data.data[0].name.split(" ");
+                    } else {
+                        tmp = res.data.data[0].name.split("");
+                    }
+                    name = tmp[0] + " X " + tmp[tmp.length - 1];
+                    $("#winner_no").html(res.data.data.length)
+                    $("#winner").html("姓名&nbsp;&nbsp;&nbsp;&nbsp;" + name)
+                    $("#winner_phone").html("電話末五碼&nbsp;&nbsp;&nbsp;" + res.data.data[0].mobile.slice(res.data.data[0].mobile.length - 5, res.data.data[0].mobile.length));
+                    $("#winner_box").removeClass('d-none');
+                }, 3700)
             } else {
                 alert(res.data.message);
             }
@@ -150,8 +163,6 @@ $(document).ready(function () {
         .then(function (res) {
             var name = "";
             var tmp = "";
-            // var phone = "";
-            // var tmp2 = [];
             if (res.data.data[0].name.includes(" ")){
                 tmp = res.data.data[0].name.split(" ");
             } else {
@@ -196,6 +207,9 @@ $(document).ready(function () {
         .catch(function (err) {
             console.log(err);
         })
+    }
+    function showWinner () {
+
     }
     signin();
 });
