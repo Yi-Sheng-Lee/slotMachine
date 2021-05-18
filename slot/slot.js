@@ -11,6 +11,8 @@ $(document).ready(function () {
     var isRolling = false;
     var token = "";
 
+    var winnerID = "";
+
     $("#winner").hide();
     $("#arm").click(function () {
         if (!isRolling) {
@@ -129,6 +131,7 @@ $(document).ready(function () {
         }).then(function (res) {
             if (res.data.status == "success") {
                 go(res.data.data[0].mobile);
+                winnerID = res.data.data[0].id
             } else {
                 alert(res.data.message);
             }
@@ -149,15 +152,16 @@ $(document).ready(function () {
         .then(function (res) {
             var name = "";
             var tmp = "";
-            if (res.data.data[0].name.includes(" ")){
-                tmp = res.data.data[0].name.split(" ");
+            var index = res.data.data.findIndex(e => e.id == winnerID)
+            if (res.data.data[index].name.includes(" ")){
+                tmp = res.data.data[index].name.split(" ");
             } else {
-                tmp = res.data.data[0].name.split("");
+                tmp = res.data.data[index].name.split("");
             }
             name = tmp[0] + " X " + tmp[tmp.length - 1];
             $("#winner_no").html(res.data.data.length)
             $("#winner").html("姓名&nbsp;&nbsp;&nbsp;&nbsp;" + name)
-            $("#winner_phone").html("電話末五碼&nbsp;&nbsp;&nbsp;" + res.data.data[0].mobile.slice(res.data.data[0].mobile.length - 5, res.data.data[0].mobile.length));
+            $("#winner_phone").html("電話末五碼&nbsp;&nbsp;&nbsp;" + res.data.data[index].mobile.slice(res.data.data[index].mobile.length - 5, res.data.data[index].mobile.length));
             $("#winner_box").removeClass('d-none');
             
             var str = `<thead>
@@ -168,27 +172,27 @@ $(document).ready(function () {
                                 <th>電話號碼</th>
                             </tr>
                         </thead>`;
-            res.data.data.forEach(e => {
-                var email = e.email.split('@');
-                var name = "";
-                var tmp = "";
-                if (e.name.includes(" ")){
-                    tmp = e.name.split(" ");
-                } else {
-                    tmp = e.name.split("");
-                }
-                name = tmp[0] + " X " + tmp[tmp.length - 1];
-                str += `<tbody>
-                            <tr>
-                                <td>${name}</td>
-                                <td>${email[0]}@XXXXXXXX</td>
-                                <td>${e.mobile}</td>
-                            </tr>`;
-            });
-            str += `</tbody>`;
-            if (res.data.data.length != 0) {
-                $("#winnerList").html(str);
-            }
+            // res.data.data.forEach(e => {
+            //     var email = e.email.split('@');
+            //     var name = "";
+            //     var tmp = "";
+            //     if (e.name.includes(" ")){
+            //         tmp = e.name.split(" ");
+            //     } else {
+            //         tmp = e.name.split("");
+            //     }
+            //     name = tmp[0] + " X " + tmp[tmp.length - 1];
+            //     str += `<tbody>
+            //                 <tr>
+            //                     <td>${name}</td>
+            //                     <td>${email[0]}@XXXXXXXX</td>
+            //                     <td>${e.mobile}</td>
+            //                 </tr>`;
+            // });
+            // str += `</tbody>`;
+            // if (res.data.data.length != 0) {
+            //     $("#winnerList").html(str);
+            // }
         })
         .catch(function (err) {
             console.log(err);
